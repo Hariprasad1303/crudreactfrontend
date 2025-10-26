@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Base URL for JSON Server
-const API_URL = "https://crudreact-cq0a.onrender.com";
+const API_URL = "https://crudreact-cq0a.onrender.com/skills";
 
 /**
  * Get all skills
