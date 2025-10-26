@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// Base URL for JSON Server
+// Base URL for Projects
 const API_URL = "https://crudreact-cq0a.onrender.com/projects";
 
 /**
@@ -9,7 +9,7 @@ const API_URL = "https://crudreact-cq0a.onrender.com/projects";
 export const getProjects = async () => {
   try {
     const response = await axios.get(API_URL);
-    return response.data;
+    return Array.isArray(response.data) ? response.data : [];
   } catch (error) {
     console.error("Error fetching projects:", error);
     return [];

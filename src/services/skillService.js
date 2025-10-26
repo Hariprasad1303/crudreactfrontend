@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// Base URL for JSON Server
+// Base URL for Skills
 const API_URL = "https://crudreact-cq0a.onrender.com/skills";
 
 /**
@@ -9,7 +9,7 @@ const API_URL = "https://crudreact-cq0a.onrender.com/skills";
 export const getSkills = async () => {
   try {
     const response = await axios.get(API_URL);
-    return response.data;
+    return Array.isArray(response.data) ? response.data : [];
   } catch (error) {
     console.error("Error fetching skills:", error);
     return [];
@@ -18,7 +18,7 @@ export const getSkills = async () => {
 
 /**
  * Get a single skill by ID
- * @param {number} id 
+ * @param {number} id
  */
 export const getSkillById = async (id) => {
   try {
@@ -32,7 +32,7 @@ export const getSkillById = async (id) => {
 
 /**
  * Add a new skill
- * @param {Object} skill 
+ * @param {Object} skill
  */
 export const addSkill = async (skill) => {
   try {
@@ -46,8 +46,8 @@ export const addSkill = async (skill) => {
 
 /**
  * Update an existing skill
- * @param {number} id 
- * @param {Object} skill 
+ * @param {number} id
+ * @param {Object} skill
  */
 export const updateSkill = async (id, skill) => {
   try {
@@ -61,7 +61,7 @@ export const updateSkill = async (id, skill) => {
 
 /**
  * Delete a skill
- * @param {number} id 
+ * @param {number} id
  */
 export const deleteSkill = async (id) => {
   try {
