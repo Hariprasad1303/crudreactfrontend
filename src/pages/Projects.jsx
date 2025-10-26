@@ -98,11 +98,6 @@ const Projects = () => {
               <Typography variant="body2" color="text.secondary" mb={2}>
                 {project.description}
               </Typography>
-              <LinearProgress
-                variant="determinate"
-                value={Math.min(project.description.length, 100)}
-                sx={{ height: 10, borderRadius: 5 }}
-              />
             </CardContent>
             <Box className="flex justify-end gap-2 p-2 pt-0">
               <IconButton color="primary" onClick={() => handleOpen(project)}>
